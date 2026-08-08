@@ -1,0 +1,16 @@
+{
+  "name": "gdrive-audio-streamer",
+  "version": "1.0.0",
+  "description": "Google Drive MP3 Streaming Proxy for Render.com",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>ZEN Müzik - Drive Hits Temmuz 2026</title>
+    <!-- Meta Tags -->
+    <meta name="description" content="Google Drive JAARMIX by ZEN">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="ZEN Temmuz 2026 Hits">
+    <link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1612881454568-1c45248540d1?auto=format&fit=crop&w=180&h=180&q=80">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #121212; /* Spotify Dark Obsidian */
+            --bg-secondary: #181818;
+            --bg-tertiary: #282828;
+            --glass-bg: rgba(255, 255, 255, 0.04);
+            --glass-bg-hover: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.06);
+            --glass-highlight: rgba(255, 255, 255, 0.12);
+            --accent: #1db954; /* Spotify Green Accent */
+            --accent-glow: rgba(29, 185, 84, 0.4);
+            --accent-gradient: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+            --text-primary: #ffffff;
+            --text-secondary: #b3b3b3;
+            --text-muted: #727272;
+            --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            height: -webkit-fill-available;
+            overflow: hidden;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* App Container Layout */
+        .app-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sidebar Style (Desktop) */
+        .sidebar {
+            width: 260px;
+            background-color: #000000;
+            border-right: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 32px;
+            z-index: 10;
+            flex-shrink: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 4px;
+        }
+
+        .brand-logo {
+            width: 38px;
+            height: 38px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .brand-logo svg {
+            width: 22px;
+            height: 22px;
+            fill: #000000;
+        }
+
+        .brand-title {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-item:hover { color: var(--text-primary); }
+        .nav-item.active { background-color: #282828; color: var(--text-primary); }
+        .nav-item svg { width: 22px; height: 22px; fill: currentColor; }
+
+        /* Main Content Panel - FLEX MOBIL KAYDIRMA DÜZELTMESİ */
+        .main-content {
+            flex: 1;
+            min-width: 0;
+            min-height: 0; /* Flexbox kaydırma için kritik! */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(180deg, #222222 0%, #121212 100%);
+            overflow: hidden;
+        }
+
+        .top-bar {
+            padding: 24px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            z-index: 5;
+            flex-shrink: 0;
+        }
+
+        .view-title { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+        .search-count-badge { font-size: 14px; font-weight: 600; color: var(--accent); margin-left: 8px; }
+
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            background-color: #242424;
+            border: 1px solid transparent;
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .search-input:focus { border-color: #ffffff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); }
+
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: var(--text-secondary);
+            pointer-events: none;
+        }
+
+        /* SCROLLABLE CONTENT - MOBİLDE DİKİNE SERBEST KAYDIRMA DÜZELTMESİ */
+        .scrollable-content {
+            flex: 1;
+            min-height: 0; /* Flex kaydırma sınırı */
+            overflow-y: scroll;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-y;
+            padding: 0 36px 160px 36px;
+            scrollbar-width: thin;
+            scrollbar-color: #333333 transparent;
+        }
+
+        .scrollable-content::-webkit-scrollbar { width: 8px; }
+        .scrollable-content::-webkit-scrollbar-thumb { background: #333333; border-radius: 4px; }
+
+        /* Ribbon ile Toplu İndir Butonu */
+        .category-ribbon {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .ribbon-pills {
+            display: flex;
+            gap: 10px;
+        }
+
+        .category-pill {
+            padding: 8px 20px;
+            background-color: #2a2a2a;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .category-pill:hover { background-color: #3e3e3e; }
+        .category-pill.active { background: #ffffff; color: #000000; }
+
+        /* Toplu İndir Düğmesi */
+        .batch-download-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            background-color: rgba(29, 185, 84, 0.15);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .batch-download-btn:hover { background-color: var(--accent); color: #000000; }
+        .batch-download-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; }
+
+        /* Grid System */
+        .station-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .station-card {
+            background-color: transparent;
+            border-radius: 8px;
+            padding: 10px 14px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border-left: 4px solid transparent;
+        }
+
+        .station-card:hover { background-color: #2a2a2a; }
+
+        .station-card.playing-now {
+            background: linear-gradient(90deg, rgba(29, 185, 84, 0.18) 0%, rgba(255, 255, 255, 0.02) 100%) !important;
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .card-image {
+            width: 44px;
+            height: 44px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #282828;
+            flex-shrink: 0;
+        }
+
+        .card-image svg { width: 22px; height: 22px; fill: var(--text-secondary); }
+
+        .station-info {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-width: 0;
+            gap: 2px;
+        }
+
+        .station-name { font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-primary); }
+        .station-cat { font-size: 13px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .card-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: auto;
+        }
+
+        .favorite-btn, .download-btn {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: transparent;
+            border: none;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; color: var(--text-secondary);
+            transition: var(--transition-smooth);
+        }
+
+        .favorite-btn:hover, .download-btn:hover { color: #ffffff; transform: scale(1.1); }
+        
+        .favorite-btn.is-fav, .control-btn.is-fav, .full-btn.is-fav { color: var(--accent) !important; }
+        .favorite-btn.is-fav svg, .control-btn.is-fav svg, .full-btn.is-fav svg {
+            fill: var(--accent) !important;
+            stroke: var(--accent) !important;
+        }
+
+        .download-btn.is-downloaded {
+            color: var(--accent) !important;
+            background: rgba(29, 185, 84, 0.12);
+        }
+        .download-btn.is-downloaded svg { stroke: var(--accent) !important; }
+
+        .favorite-btn svg, .download-btn svg { width: 18px; height: 18px; fill: currentColor; }
+        .favorite-btn:not(.is-fav) svg { fill: transparent; stroke: currentColor; stroke-width: 2; }
+        .download-btn svg { fill: none; stroke: currentColor; stroke-width: 2; }
+
+        .station-card.playing-now .station-name { color: var(--accent) !important; }
+
+        /* Bottom Player Bar - Fixed Always On Top */
+        .player-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            height: 95px;
+            background: #000000;
+            border-top: 1px solid #282828;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 24px;
+            padding-bottom: var(--safe-area-bottom);
+            z-index: 100;
+        }
+
+        .player-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            width: 28%;
+            min-width: 200px;
+            cursor: pointer;
+        }
+
+        .player-cover {
+            width: 56px;
+            height: 56px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #282828;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player-cover svg { width: 26px; height: 26px; fill: var(--text-secondary); }
+
+        .player-equalizer-icon {
+            position: absolute;
+            display: none;
+            width: 100%; height: 100%;
+            top: 0; left: 0;
+            background: rgba(0, 0, 0, 0.7);
+            align-items: flex-end;
+            justify-content: center;
+            gap: 3px; padding-bottom: 10px;
+        }
+
+        .player-equalizer-icon span { width: 3px; height: 4px; background: var(--accent); border-radius: 1px; }
+        .player-bar.is-playing-state .player-equalizer-icon { display: flex; }
+
+        .player-station-info { display: flex; flex-direction: column; gap: 2px; overflow: hidden; }
+        .player-station-name { font-weight: 700; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #ffffff; }
+        .player-station-status { font-size: 12px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* Center Player Controls & Seek Slider */
+        .player-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            width: 44%;
+            max-width: 580px;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .control-btn {
+            background: none; border: none;
+            color: var(--text-secondary); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .control-btn:hover { color: #ffffff; }
+        .control-btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+        .control-btn.play-pause {
+            width: 36px; height: 36px;
+            background: #ffffff; color: #000000;
+            border-radius: 50%;
+        }
+
+        .control-btn.play-pause:hover { transform: scale(1.06); background: #ffffff; color: #000000; }
+        .control-btn.play-pause svg { width: 18px; height: 18px; fill: currentColor; }
+
+        /* NAVİGASYON SLIDER'I */
+        .seek-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .time-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            width: 36px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .seek-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 4px;
+            border-radius: 2px;
+            background: #4d4d4d;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .seek-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .seek-slider:hover::-webkit-slider-thumb { background: var(--accent); }
+
+        /* SES SLIDER'I NAVİGASYONUN ALTINDA */
+        .volume-subbar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            width: 150px;
+            margin-top: 2px;
+        }
+
+        .volume-subbar svg { width: 14px; height: 14px; fill: var(--text-secondary); }
+
+        .volume-slider-compact {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 3px;
+            border-radius: 2px;
+            background: #4d4d4d;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .volume-slider-compact::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .player-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 16px;
+            width: 28%;
+        }
+
+        /* Sleep Timer Dropdown */
+        .timer-menu {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            background: #282828;
+            border: 1px solid #3e3e3e;
+            border-radius: 8px;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            z-index: 3000;
+            min-width: 160px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        }
+
+        .timer-menu-title { font-size: 11px; font-weight: 700; color: var(--text-secondary); padding: 6px 12px; border-bottom: 1px solid #3e3e3e; }
+        .timer-option { padding: 8px 12px; border-radius: 4px; font-size: 13px; cursor: pointer; color: #fff; }
+        .timer-option:hover { background: #3e3e3e; color: var(--accent); }
+
+        .timer-badge {
+            display: none;
+            font-size: 9px;
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 800;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        /* Toast Notifications */
+        .toast-container {
+            position: fixed; top: 24px; left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: #282828;
+            border: 1px solid #3e3e3e;
+            padding: 12px 24px; border-radius: 30px;
+            color: white; font-size: 14px; font-weight: 600;
+            z-index: 10000; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-container.show { transform: translateX(-50%) translateY(0); }
+
+        /* Full Screen Draggable Floating Overlay Player */
+        .full-player {
+            position: fixed; top: 100%; left: 0;
+            width: 100vw; height: 100vh;
+            background: #121212; z-index: 1000;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+            display: flex; flex-direction: column;
+            padding: 36px; visibility: hidden; pointer-events: none;
+        }
+
+        .full-player.active { transform: translateY(-100%); visibility: visible; pointer-events: auto; }
+
+        .full-player-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover; background-position: center;
+            filter: blur(100px) saturate(2); opacity: 0.12; z-index: -1;
+        }
+
+        .full-player-header { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .close-player-btn {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: rgba(255,255,255,0.08); border: none;
+            display: flex; align-items: center; justify-content: center; cursor: pointer; color: white;
+        }
+
+        .close-player-btn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; }
+
+        .full-player-content {
+            flex: 1; display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 24px; max-width: 420px; margin: 0 auto; width: 100%;
+        }
+
+        .full-cover-wrapper {
+            width: 220px; height: 220px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Bangers', cursive, sans-serif; font-size: 36px;
+            color: white; text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            background: #282828; text-align: center; padding: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+
+        .full-details { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .full-title-block { display: flex; flex-direction: column; gap: 4px; width: 75%; }
+        .full-station-name { font-size: 22px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #fff; }
+        .full-station-cat { font-size: 14px; color: var(--text-secondary); }
+
+        .full-equalizer { display: flex; align-items: flex-end; justify-content: center; gap: 6px; height: 40px; width: 100%; }
+        .full-equalizer span { width: 6px; height: 8px; background: var(--accent); border-radius: 3px; transition: height 0.08s ease; }
+
+        .full-controls-wrapper { display: flex; flex-direction: column; gap: 18px; width: 100%; }
+        .full-media-controls { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+        .full-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative; }
+        .full-btn:hover { color: #ffffff; }
+        .full-btn svg { width: 22px; height: 22px; fill: currentColor; }
+
+        .full-btn.play-pause { width: 64px; height: 64px; background: #ffffff; color: #000000; border-radius: 50%; }
+        .full-btn.play-pause svg { width: 28px; height: 28px; fill: currentColor; }
+
+        .full-seek-container { display: flex; align-items: center; gap: 10px; width: 100%; }
+
+        body.screensaver-active .sidebar,
+        body.screensaver-active .top-bar,
+        body.screensaver-active .scrollable-content,
+        body.screensaver-active .player-bar { display: none !important; }
+        body.screensaver-active .full-player { background: #000000 !important; }
+
+        /* Mobil Bottom Tab Bar (Ekran daralınca görünür) */
+        .mobile-tab-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            height: 55px;
+            background: #000000;
+            border-top: 1px solid #282828;
+            z-index: 90;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .tab-item {
+            display: flex; flex-direction: column; align-items: center;
+            gap: 2px; color: var(--text-secondary); font-size: 10px;
+            font-weight: 600; cursor: pointer; flex: 1;
+        }
+
+        .tab-item.active { color: #ffffff; }
+        .tab-item svg { width: 20px; height: 20px; fill: currentColor; }
+
+        /* MOBİL UYUM VE SERBEST DİKİNE KAYDIRMA DÜZELTMESİ */
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .top-bar { padding: 16px 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
+            .search-container { width: 100%; }
+            /* Mobil kaydırma alanı düzeltmesi: 160px alt boşluk bırakılarak sabit player bar altında kalan şarkılara rahatça ulaşılır */
+            .scrollable-content { padding: 0 20px 160px 20px; overflow-y: scroll; -webkit-overflow-scrolling: touch; }
+            .player-bar { bottom: 55px; height: 75px; padding: 0 16px; }
+            .mobile-tab-bar { display: flex; }
+            .player-left { width: 55%; }
+            .player-center { width: 45%; align-items: flex-end; }
+            .player-right { display: none; }
+            .seek-container, .volume-subbar { display: none; }
+            .full-player { padding: 24px; }
+        }
+
+        @media (min-width: 769px) {
+            .full-player {
+                width: 400px; height: 720px;
+                right: 32px; bottom: 105px; top: auto; left: auto;
+                border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+                border: 1px solid #282828;
+                transform: translateY(120%); padding: 24px;
+                cursor: grab;
+            }
+            .full-player.active { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-logo">
+                <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            </div>
+            <h1 class="brand-title">ZEN Temmuz 2026 Hits</h1>
+        </div>
+
+        <nav class="nav-menu">
+            <div class="nav-item active" onclick="switchTab('discover')" id="menu-discover">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <span id="menu-text-discover">Tüm Müzikler</span>
+            </div>
+            <div class="nav-item" onclick="switchTab('favorites')" id="menu-favorites">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <span id="menu-text-favorites">Favorilerim</span>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <main class="main-content">
+        <header class="top-bar">
+            <div style="display:flex; align-items:baseline;">
+                <h2 class="view-title" id="page-title">ZEN Temmuz 2026 Hits</h2>
+                <span class="search-count-badge" id="search-count-badge"></span>
+            </div>
+            <div class="search-container">
+                <svg class="search-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <input type="text" placeholder="Şarkı veya sanatçı ara..." class="search-input" id="search-input" oninput="handleSearch(this.value)">
+            </div>
+        </header>
+
+        <section class="scrollable-content">
+            <!-- Ribbon ile Toplu İndir Düğmesi ve Şarkı Sayıları -->
+            <div class="category-ribbon" id="categories-ribbon">
+                <div class="ribbon-pills">
+                    <div class="category-pill active" id="pill-all" onclick="filterCategory('all', this)">Tüm Şarkılar (0)</div>
+                    <div class="category-pill" id="pill-fav" onclick="filterCategory('favorites', this)">❤️ Favorilerim (0)</div>
+                </div>
+
+                <button class="batch-download-btn" onclick="downloadAllSongs()" title="Listedeki tüm müzikleri indir">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Tümünü İndir
+                </button>
+            </div>
+
+            <!-- Songs Grid -->
+            <div class="station-grid" id="station-grid"></div>
+        </section>
+
+        <!-- Sleep Timer Menu -->
+        <div class="timer-menu" id="timer-menu" style="display: none;">
+            <div class="timer-menu-title">Uyku Zamanlayıcısı</div>
+            <div class="timer-option" onclick="setSleepTimer(0)">Kapat</div>
+            <div class="timer-option" onclick="setSleepTimer(15)">15 Dakika</div>
+            <div class="timer-option" onclick="setSleepTimer(30)">30 Dakika</div>
+            <div class="timer-option" onclick="setSleepTimer(45)">45 Dakika</div>
+            <div class="timer-option" onclick="setSleepTimer(60)">60 Dakika</div>
+        </div>
+
+        <!-- Bottom Player Bar - Fixed Always On Top -->
+        <footer class="player-bar" id="player-bar">
+            <!-- Left Info Panel -->
+            <div class="player-left" onclick="openFullPlayer()">
+                <div class="player-cover" id="player-cover-art">
+                    <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                    <div class="player-equalizer-icon">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="player-station-info">
+                    <span class="player-station-name" id="player-title">Şarkı Seçilmedi</span>
+                    <span class="player-station-status" id="player-subtitle">Oynatmak için tıklayın</span>
+                </div>
+            </div>
+
+            <!-- Center Controls & Seek Slider -->
+            <div class="player-center">
+                <div class="player-controls">
+                    <button class="control-btn prev-next" id="btn-prev" onclick="playNextPrev(-1)">
+                        <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                    </button>
+
+                    <button class="control-btn play-pause disabled" id="btn-play-pause" onclick="togglePlay()">
+                        <svg viewBox="0 0 24 24" id="play-icon"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" id="pause-icon" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+
+                    <button class="control-btn prev-next" id="btn-next" onclick="playNextPrev(1)">
+                        <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6zm9-12v12h2V6z"/></svg>
+                    </button>
+                </div>
+
+                <!-- NAVİGASYON SLIDER'I -->
+                <div class="seek-container">
+                    <span class="time-label" id="time-current">0:00</span>
+                    <input type="range" class="seek-slider" id="seek-slider" min="0" max="100" value="0" step="0.1" oninput="seekAudioInput(this.value)">
+                    <span class="time-label" id="time-total">0:00</span>
+                </div>
+
+                <!-- SES SLIDER'I NAVİGASYONUN ALTINDA -->
+                <div class="volume-subbar">
+                    <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+                    <input type="range" min="0" max="1" step="0.05" value="0.8" class="volume-slider-compact" id="volume-slider" oninput="setVolume(this.value)">
+                    <svg viewBox="0 0 24 24"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                </div>
+            </div>
+
+            <!-- Right Options -->
+            <div class="player-right">
+                <button class="control-btn download-btn" id="btn-download" onclick="downloadCurrentSong()" title="Şarkıyı İndir">
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                </button>
+
+                <button class="control-btn timer-toggle" id="btn-timer" onclick="toggleTimerMenu(event)" title="Uyku Zamanlayıcısı">
+                    <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <span class="timer-badge" id="timer-countdown"></span>
+                </button>
+
+                <button class="control-btn fav-toggle" id="btn-fav" onclick="toggleFavoriteCurrent()">
+                    <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </button>
+            </div>
+        </footer>
+
+        <!-- Mobil Bottom Tab Bar -->
+        <nav class="mobile-tab-bar">
+            <div class="tab-item active" onclick="switchTab('discover')" id="tab-discover">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <span id="tab-text-discover">Müzikler</span>
+            </div>
+            <div class="tab-item" onclick="switchTab('favorites')" id="tab-favorites">
+                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                <span id="tab-text-favorites">Favoriler</span>
+            </div>
+        </nav>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast-container" id="toast-container">
+        <span id="toast-message">Bildirim</span>
+    </div>
+
+    <!-- SÜRÜKLENEBİLİR & MOBİL GESTURE DESTEKLİ PLAYER MODALI -->
+    <div class="full-player" id="full-player">
+        <div class="full-player-bg" id="full-player-blur-bg"></div>
+        <div class="full-player-header">
+            <button class="close-player-btn" onclick="closeFullPlayer()">
+                <svg viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+            </button>
+            <span id="full-player-status-title" class="player-status-title idle">ZEN Temmuz 2026 Hits</span>
+            <div class="device-status-widget"><span id="widget-time">12:00</span></div>
+        </div>
+
+        <div class="full-player-content">
+            <div class="full-cover-wrapper" id="full-cover-art">Şarkı Seçilmedi</div>
+
+            <div class="full-details">
+                <div class="full-title-block">
+                    <span class="full-station-name" id="full-player-title">Şarkı Seçilmedi</span>
+                    <span class="full-station-cat" id="full-player-cat">Sanatçı yok</span>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <button class="full-btn download-btn" id="full-btn-download" onclick="downloadCurrentSong()" title="Şarkıyı İndir">
+                        <svg viewBox="0 0 24 24" width="26" height="26"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
+
+                    <button class="full-btn fav-toggle" id="full-details-fav" onclick="toggleFavoriteCurrent()">
+                        <svg viewBox="0 0 24 24" width="28" height="28"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Graphic Equalizer -->
+            <div class="full-equalizer" id="full-equalizer-bars">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="full-controls-wrapper">
+                <div class="full-seek-container">
+                    <span class="time-label" id="full-time-current">0:00</span>
+                    <input type="range" class="seek-slider" id="full-seek-slider" min="0" max="100" value="0" step="0.1" oninput="seekAudioInput(this.value)">
+                    <span class="time-label" id="full-time-total">0:00</span>
+                </div>
+
+                <div class="full-media-controls">
+                    <button class="full-btn timer-toggle" id="full-btn-timer" onclick="toggleTimerMenu(event)">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span class="timer-badge" id="full-timer-countdown"></span>
+                    </button>
+
+                    <button class="full-btn prev-next" onclick="playNextPrev(-1)">
+                        <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                    </button>
+
+                    <button class="full-btn play-pause" onclick="togglePlay()">
+                        <svg viewBox="0 0 24 24" id="full-play-icon"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" id="full-pause-icon" style="display: none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                    </button>
+
+                    <button class="full-btn prev-next" onclick="playNextPrev(1)">
+                        <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6zm9-12v12h2V6z"/></svg>
+                    </button>
+
+                    <button class="full-btn screensaver-toggle" id="btn-screensaver" onclick="toggleScreenSaver(event)">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+                    </button>
+                </div>
+
+                <div class="full-volume-control" style="display:flex; align-items:center; gap:10px;">
+                    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+                    <input type="range" min="0" max="1" step="0.05" value="0.8" class="volume-slider-compact" style="flex:1" id="full-volume-slider" oninput="setVolume(this.value)">
+                    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audio-engine" preload="metadata"></audio>
+
+<script>
+    // =========================================================================
+    // 🔗 GOOGLE DRIVE LİNK LİSTENİZİ AŞAĞIDAKİ ALANA YAPIŞTIRIN:
+    // =========================================================================
+    const RAW_GOOGLE_DRIVE_LINKS = `
+
+
+
+https://drive.google.com/file/d/1FEonGS9AtkXvlJrYLKfKryZlnDHyKvsS/view?usp=drive_link, https://drive.google.com/file/d/1VfYbyQb-pEZVDbk6sWWnVFSDTkQwzb60/view?usp=drive_link, https://drive.google.com/file/d/1-WIW_8DGWTeMa2ymJTAvS_n-kxmcqSYX/view?usp=drive_link, https://drive.google.com/file/d/12h2-egVwF6LzSIeaIYL2ggNhmN_jDQ5I/view?usp=drive_link, https://drive.google.com/file/d/1FbhBaRCphlzo_CGGbXUK52W3zGrDOs9C/view?usp=drive_link, https://drive.google.com/file/d/1inwtmZ8ygQEmIrQYA_5D7ZPjGp0YimIM/view?usp=drive_link, https://drive.google.com/file/d/1PnRKnxiQM3jxH0dBxid5QSRsBd4IGbOJ/view?usp=drive_link, https://drive.google.com/file/d/1SADvCdf0O3T9SnbHDSgvV18uoN3jWwtb/view?usp=drive_link, https://drive.google.com/file/d/1TraYZWtNaBMdDB3Zl1M780x5SMOGvWJK/view?usp=drive_link, https://drive.google.com/file/d/1sGWnu-zsDrtSfKDKyc9ve_Vgh6jfaeyj/view?usp=drive_link, https://drive.google.com/file/d/16p62GVBqhw2Hdzg1a6KE-KX6WVzLMjre/view?usp=drive_link, https://drive.google.com/file/d/1Bm4Kwhn7x697bfKonAbbPKdG0_5By2XT/view?usp=drive_link, https://drive.google.com/file/d/10A5uor_uJ45kYCQeuIUZOs5yj5CYVRO1/view?usp=drive_link, https://drive.google.com/file/d/1q3iB68CTjtKrhnjrT2Lvt3ZtCG4sBgTo/view?usp=drive_link, https://drive.google.com/file/d/1vGZX2lVyTlmNHKNyQjiWceTXRq11vccp/view?usp=drive_link, https://drive.google.com/file/d/1xeMpTNN6i_U9FKCKzk-wjkJaKWN4QNNe/view?usp=drive_link, https://drive.google.com/file/d/1iOEb9IgobarMOxtUMJ5WXL58XLtaUwoK/view?usp=drive_link, https://drive.google.com/file/d/1FuD97ixgTVFLyeNzuBvQSQDh8FCIXJ8l/view?usp=drive_link, https://drive.google.com/file/d/1ed4ngKVAziSt1W2xF5B-8m1hon24Sszo/view?usp=drive_link, https://drive.google.com/file/d/1sCqoh4sSOLm1xHh0sZdc3DSnTuF040_R/view?usp=drive_link, https://drive.google.com/file/d/1APs9HnOXPG1qoAHZ_8tgQHzYBq2DqL9N/view?usp=drive_link, https://drive.google.com/file/d/1X9Rgjr6btftGa6KvgUClkct70qq3y48Z/view?usp=drive_link, https://drive.google.com/file/d/179f1Mw3sRgC-xbfwMJ-O2J93NEA3Reeb/view?usp=drive_link, https://drive.google.com/file/d/1IHjw2dbUDXVoqDEhRvw-LyQwbmjxa64q/view?usp=drive_link, https://drive.google.com/file/d/1oPUpGV9rOl1DdhxJc0q5ObrQuhD3uZRg/view?usp=drive_link, https://drive.google.com/file/d/1OdV0dk1LgyYSSrOU1Kmfh8oQEDdRvAKM/view?usp=drive_link, https://drive.google.com/file/d/1czj5_lyR5EhhyaKIgNp3B-CVoBozRs-O/view?usp=drive_link, https://drive.google.com/file/d/1cLcscO85L6G6BJMOkr2SUpffhBLTWAeq/view?usp=drive_link, https://drive.google.com/file/d/1Od4GrIeJwGPADQqSZOiv3C6rTqz2DAhL/view?usp=drive_link, https://drive.google.com/file/d/1S4rRemXRlI_gnyY-I1Tb6fx1UINVGS4O/view?usp=drive_link, https://drive.google.com/file/d/1LZNvIXbISMAeBPdWIDj6248iBNQJaBUq/view?usp=drive_link, https://drive.google.com/file/d/15C-50x8fcdF5XxnYnlo8ZZTkAc8EAWA2/view?usp=drive_link, https://drive.google.com/file/d/1NlOIrBjd34pU7WCQv_0D17vxmiOYcimV/view?usp=drive_link, https://drive.google.com/file/d/1lci1_pdEWYmHhhZTEPeHejvCgSYjDXKk/view?usp=drive_link, https://drive.google.com/file/d/1VNAKRhWh0Vokcx9N6UoCeNjZGQbkx3Z2/view?usp=drive_link, https://drive.google.com/file/d/1_gig8bytNCEyra_oTglOe4P_Cxc3NhuK/view?usp=drive_link, https://drive.google.com/file/d/14ePedEo8clX1VU-dwU5DTSsv5pC4QAS0/view?usp=drive_link, https://drive.google.com/file/d/1B6bv2Q4BthIjFkYx_1TLyRIzB5WbHoQu/view?usp=drive_link, https://drive.google.com/file/d/1sUoj1DVkgPtx7fyLOXhzNecWJ7ipBV0X/view?usp=drive_link, https://drive.google.com/file/d/10sl8_WfwyM2R8PcsJ40a-BUClnfmPXWf/view?usp=drive_link, https://drive.google.com/file/d/159dZDgYLwaaR7dB-PBnIBmP8FUscMEnu/view?usp=drive_link, https://drive.google.com/file/d/1JUD4MKQ95OTgw21W39YWB4K8GvJrzQ_t/view?usp=drive_link, https://drive.google.com/file/d/1JPISeY1PF1LIKKB9dbqZ6ktScJeQzSdi/view?usp=drive_link, https://drive.google.com/file/d/1jCnr06izq4y_9MGRSIRYxYcisrj0ovfb/view?usp=drive_link, https://drive.google.com/file/d/1gWC-PR02Ksk7nbvFU6JbdTApR1HJGwn6/view?usp=drive_link, https://drive.google.com/file/d/1D8sBAvhvregilKu6GRraoFH-MASbR-ng/view?usp=drive_link, https://drive.google.com/file/d/1rIM5nj6dsJQFMfICQ_PM_tUVJxO9dYuz/view?usp=drive_link, https://drive.google.com/file/d/1u7w9-bVa4DVTrLU3I-Ue6YwYlzmbcinw/view?usp=drive_link, https://drive.google.com/file/d/1I6oiT8PJrPsj86subwKBPyjglyKtQAzb/view?usp=drive_link, https://drive.google.com/file/d/1tAfANHeVOAq4g3OlCf-ky2wKlcq_ZfH3/view?usp=drive_link, https://drive.google.com/file/d/1OlHqtYeeNsH-N-MPVKWnqYLEiaBeVHqX/view?usp=drive_link, https://drive.google.com/file/d/15kkokbeKk9Sk-GvDUG_xXR6ZGIwPSUat/view?usp=drive_link, https://drive.google.com/file/d/1D8r3lNk6ewRgGL3L8uRtdtV3Fh9xq7dm/view?usp=drive_link, https://drive.google.com/file/d/1SAw1QAfM4A3ubR1xCbnLY5qkChi1tOkY/view?usp=drive_link, https://drive.google.com/file/d/1f9qTH8CJ9gQnjFP8bNvA3FJLjFBVZSWJ/view?usp=drive_link, https://drive.google.com/file/d/1gwkb4xTzu8TRxede39rHwl4sv5nVABGV/view?usp=drive_link, https://drive.google.com/file/d/1EN4GWJpwQPz1cYQI6Z0do-lw6pzPdtqq/view?usp=drive_link, https://drive.google.com/file/d/18W2hxHR-2ELyJUzRIN8tEa3FUotZW5ZB/view?usp=drive_link, https://drive.google.com/file/d/1GWHbfTn4PgxzH-938z3IZKEOdA_Gzici/view?usp=drive_link, https://drive.google.com/file/d/1npe9O72OvmMhEiQp6LeRbiSUnrkVEMTq/view?usp=drive_link, https://drive.google.com/file/d/1tD-OenOvzqGAC8wdxXjo2SEqj-t7c49s/view?usp=drive_link, https://drive.google.com/file/d/12FCo3bxhzp6RgbCfTjMRIaScab2ljHkW/view?usp=drive_link, https://drive.google.com/file/d/1lOJuDG1eeCYdZScFG2J8O-rucr5zhKar/view?usp=drive_link, https://drive.google.com/file/d/1yPpNhj5VzFHY3SMhcy8j-JGiaUEJ7UIS/view?usp=drive_link, https://drive.google.com/file/d/1eoZURtjhtI8pbx1s00dAqIKYE9z9xglH/view?usp=drive_link, https://drive.google.com/file/d/1QkZtqvp6MjCey_UkjZpQlolgOHWuVBUT/view?usp=drive_link, https://drive.google.com/file/d/1KH2ZLV7FJ3K0Jfa8VHgumKeRMzRWe-5e/view?usp=drive_link, https://drive.google.com/file/d/1S7vaLwN1bhQ0ECWlDHuhr9BjfjQ7pHzI/view?usp=drive_link, https://drive.google.com/file/d/1TiVZCabd1XYNVyL-cSG3klrfhlj9ZoIU/view?usp=drive_link, https://drive.google.com/file/d/1FDmLvB9wqNYrZcFZvnMH1PWf1IK3AYvx/view?usp=drive_link, https://drive.google.com/file/d/1SPh7esiyMY7WK3jLPdJcRwCXgntCQrIp/view?usp=drive_link, https://drive.google.com/file/d/1-4ftKVDeFfVggklWhMi6sI65FUlt9UsC/view?usp=drive_link, https://drive.google.com/file/d/1-Qa6dgzqRjzQFqzBiBJz606BIh95X8ZF/view?usp=drive_link, https://drive.google.com/file/d/18YIoBNdFOMacukFBVGTYLJN6CVAAQfgp/view?usp=drive_link, https://drive.google.com/file/d/1D2AnReoDb1rtcJJTV532-Kf3rFtpGn1s/view?usp=drive_link, https://drive.google.com/file/d/1xcsEZQOARTr2cM0WJo6rZtMnIukqyv04/view?usp=drive_link, https://drive.google.com/file/d/13sIQsih83hWQnU-tWOAaQU-Nd7D_G3g2/view?usp=drive_link, https://drive.google.com/file/d/1J6K95k3ut3KyRu-l2Pa8p4LH-AMxbWA8/view?usp=drive_link, https://drive.google.com/file/d/1SQ_YfPs9W06muuoXyPUTUTGu9M3EuXci/view?usp=drive_link, https://drive.google.com/file/d/1V0JMDEgmBFCfIxFmCEAR3NZWdqL2rj4l/view?usp=drive_link, https://drive.google.com/file/d/1lUIoHStitISBxRQs6-N5mpsy11ujFo8p/view?usp=drive_link, https://drive.google.com/file/d/1602XhqHLb_djZV0KAyMWCvYTPC8F8a68/view?usp=drive_link, https://drive.google.com/file/d/1fP--btGwgRj9-QrSeiubmVHS10uGyWrC/view?usp=drive_link, https://drive.google.com/file/d/1DJ1H83yHikXpEl7Rrfl-NQQL1YoSOxVI/view?usp=drive_link, https://drive.google.com/file/d/14vwvdUdI55Tn99HTpnaiexRBov718F1n/view?usp=drive_link, https://drive.google.com/file/d/1OJ8MRK4CxWlwtrN585t4Aah4d_qdjqMv/view?usp=drive_link, https://drive.google.com/file/d/1lYnKI3yvv6Oqb-eIKQQlckMmJhegMPrx/view?usp=drive_link, https://drive.google.com/file/d/1MMgKt_q_c_aplhtokANFexjBp64gDwcc/view?usp=drive_link, https://drive.google.com/file/d/1xjiVfQQVXtqH4zeWn-UAqYQUH4PQa4kz/view?usp=drive_link, https://drive.google.com/file/d/1989gSjHiwOHqjZqgwb8E7UTc-EZIgQns/view?usp=drive_link, https://drive.google.com/file/d/1CYlu2SDwYxz4n1mn2ubo1kZ6CyGpi6Aq/view?usp=drive_link, https://drive.google.com/file/d/1janmmQ0jAlqDPsKwQa2wGCIfn7RHkhPV/view?usp=drive_link, https://drive.google.com/file/d/1onvD5peeEqZ29iJEE9-_OI83RYNLvwov/view?usp=drive_link, https://drive.google.com/file/d/1vzioxPLabPYwXWLNsQN98zdEA-qvYb7j/view?usp=drive_link, https://drive.google.com/file/d/1ConV_LdEJjW-3ApHxs9HJXzkk_TnybL9/view?usp=drive_link, https://drive.google.com/file/d/1Q4IVF94u1_60cGaVFKBaBYQuRBFGOaKb/view?usp=drive_link, https://drive.google.com/file/d/1Tq5AD1a8JuvBZv7Ub7YajLdWHJQNFKAw/view?usp=drive_link, https://drive.google.com/file/d/1yRSlqtN1RRWt5sTNW2AsYpr2PtEQLTNj/view?usp=drive_link, https://drive.google.com/file/d/1KEKhxjmHBiR1yHublPDZ_RfFaow6N_wB/view?usp=drive_link, https://drive.google.com/file/d/1rISSbNDHCBoTXsh8YaXjCwXndeeIr3pK/view?usp=drive_link, https://drive.google.com/file/d/17ZmnJkjstniy8JVOv8Dk77q6YZB-HEVH/view?usp=drive_link, https://drive.google.com/file/d/1WSuMG_oPzfttMCURdK5VdI-o0XIlOyVH/view?usp=drive_link, https://drive.google.com/file/d/1kMbwv2oEATznWIvzYv_FxtH1EU6_plQ3/view?usp=drive_link, https://drive.google.com/file/d/1IbSCP650x8cvbaOw5yLjYlZqOSrJdNu2/view?usp=drive_link, https://drive.google.com/file/d/1UORemp6ynz9fGVH0Et35vXPpRSk2HRRY/view?usp=drive_link, https://drive.google.com/file/d/1dxfsONElJ82WYB2O4xKxYhEbTttH3zN0/view?usp=drive_link, https://drive.google.com/file/d/1u19LidCG0HYluCI5BjncFNVQ4KYLel_s/view?usp=drive_link, https://drive.google.com/file/d/1xJUXFd0nTwh_KSbXEThKaQeoIuTLg6DP/view?usp=drive_link, https://drive.google.com/file/d/1ZCP2eBYrmqbARDuvagzoaGzgaaz4DZVe/view?usp=drive_link, https://drive.google.com/file/d/1RTURRIUbj13iYylnD97yW4wIWskzx_XD/view?usp=drive_link, https://drive.google.com/file/d/1Z6p0aAJSS0mEMqBg02ahfsotx66_cVtg/view?usp=drive_link, https://drive.google.com/file/d/139p033QSDEZBZxhOZz2469vJ17EQd5Fw/view?usp=drive_link, https://drive.google.com/file/d/17OcwMDBheA3SBMO-QWxcyBsrJzOO0V2A/view?usp=drive_link, https://drive.google.com/file/d/1zxBlnq8fHnqM_5PhhdOOFPxSI-C0KIRk/view?usp=drive_link, https://drive.google.com/file/d/1itpt0HE1YYJ0oyBz06Rd6n1OT_ObGzuX/view?usp=drive_link, https://drive.google.com/file/d/1-A3bds4c9-xTP3pF1BndP1iPDrZpr_ly/view?usp=drive_link, https://drive.google.com/file/d/1EG2a3JeTvpVLb5QiMQip23uCJH6RWJ9-/view?usp=drive_link, https://drive.google.com/file/d/1tkE6vQiLP_TgeqHlxfT97bAwafqZx8SN/view?usp=drive_link, https://drive.google.com/file/d/1RXF8otFLwMxcPmVlvgwfUJ5fBjjtdVHr/view?usp=drive_link, https://drive.google.com/file/d/1oaJZdtU2zRvxwaaolRAlF8j5QJJnD3Ii/view?usp=drive_link, https://drive.google.com/file/d/1h5PHqDddrsTVt9Q02c_vcxlOVGZYsx3Z/view?usp=drive_link, https://drive.google.com/file/d/134aRlwcaTGwDjOvJeLMvI9GLNN-njq-i/view?usp=drive_link, https://drive.google.com/file/d/1BsiFfSFsm4SVJXbXn7q9I5tIGCpNMd9M/view?usp=drive_link, https://drive.google.com/file/d/1--nPXrwzJ6EobiZWvO8Ww5zBI7O79wVB/view?usp=drive_link, https://drive.google.com/file/d/15yjMcrrKo7qS4yziDiSIFnJKAA4mjjej/view?usp=drive_link, https://drive.google.com/file/d/1DJ5xkXwtIqwnOLNF-_YujpLlOJDCwR5W/view?usp=drive_link, https://drive.google.com/file/d/1WN3S9O9uYdzKtd2T7sl5ToI_cD7YQd4j/view?usp=drive_link, https://drive.google.com/file/d/1bvL27a9PcaElBUSj0nx03pXb2oyAHcgI/view?usp=drive_link, https://drive.google.com/file/d/1hWtU1mVHTwaMZRt9vZXKlj6FEndU2LNL/view?usp=drive_link, https://drive.google.com/file/d/1uZA3PPKTz9RrFDTUVLtj1Fg2vWDzbGPx/view?usp=drive_link, https://drive.google.com/file/d/1jYrZ6yFVa5oyMs6w_FNTH_nK7GZ-vDnS/view?usp=drive_link, https://drive.google.com/file/d/1DTA3BoqeNdLOBMfGtgqwEhI1_vhZUPN4/view?usp=drive_link, https://drive.google.com/file/d/1vi6q4tChUB2qLxJK9OQHgG0Vt1hgQ9RP/view?usp=drive_link, https://drive.google.com/file/d/1y_RR5-O7kzFEnQ8UIXUDLgZbY0GN8NSd/view?usp=drive_link, https://drive.google.com/file/d/1BfwiG73jGyXsTYzTzJH4K-dgQ02Siktb/view?usp=drive_link, https://drive.google.com/file/d/1rNVWcaQk_vucfuXdbxLIG0A96MwSbR5T/view?usp=drive_link, https://drive.google.com/file/d/1Gj5KLOqUiKAgM7dKWRyP6aE7kzutgOUH/view?usp=drive_link, https://drive.google.com/file/d/18ck1KMOkRvKL1OwHn3nNyi2BC3FMFSyn/view?usp=drive_link, https://drive.google.com/file/d/1xq3GwdBh8L6gHdgypXyYTExABxUQiG5q/view?usp=drive_link, https://drive.google.com/file/d/1-ssPRV81CCJDAPtbm6BqwiJ-bL94Alt9/view?usp=drive_link, https://drive.google.com/file/d/1zEfNQ3IeRcZbDuBOaqH415Jeh_zgBAbY/view?usp=drive_link, https://drive.google.com/file/d/1vNHhHKxR3pgnBFujSJeZwIgLAT_yxQuL/view?usp=drive_link, https://drive.google.com/file/d/1oOTFXmeiijn5eSuqdoNDj_7-mJ0mJmBc/view?usp=drive_link, https://drive.google.com/file/d/1-iIx1IIRHCj1UWUeq48LHRce8275Ih_w/view?usp=drive_link, https://drive.google.com/file/d/1v81yGTKqtwfmrxS_sdwDmuAxwOGIk2NB/view?usp=drive_link, https://drive.google.com/file/d/18UkwpL7ZQVdkdn6U-oRWYqzJ55O4hDq1/view?usp=drive_link, https://drive.google.com/file/d/1vDLcUoUAzpp8jGY5RK_ZovNDzPEhadAO/view?usp=drive_link, https://drive.google.com/file/d/1Xwa8HqBVrM5OQwgl2ev_ZjtF9L7pt4XW/view?usp=drive_link, https://drive.google.com/file/d/1sNlPMEN70r8SYuCg2KKpJpg5tzyT8CMM/view?usp=drive_link, https://drive.google.com/file/d/1HWBYmMXZ3YFPySL91VGM9ZIH04veQZ9C/view?usp=drive_link, https://drive.google.com/file/d/1OxwSFDBAkyMq7NBiTdnr_HUPqtKnoZ6S/view?usp=drive_link, https://drive.google.com/file/d/1N_jLxKFmr3EJ2MWdSvXrOuui6sJZ4UHX/view?usp=drive_link, https://drive.google.com/file/d/1n3oPuSO_6wAUKS1tRXwdw7vrQp4d8WQd/view?usp=drive_link, https://drive.google.com/file/d/13Bw1v_TeAEYT3LtGHobhuadslNtXOfXV/view?usp=drive_link, https://drive.google.com/file/d/118DPrHpRcy4EG_tKR4dKepZtsEqdBsWf/view?usp=drive_link, https://drive.google.com/file/d/1GoXjaNHXw4xPuUTpbAdW7tzt8ZvG84B2/view?usp=drive_link, https://drive.google.com/file/d/1EnacbMCt-zUiYptf7ilGyE1m6RnhbkFo/view?usp=drive_link, https://drive.google.com/file/d/165THiodEVlFX23K8qkt8U5ea0Tml6iYK/view?usp=drive_link, https://drive.google.com/file/d/1xWYYcxWWaJsJrqKWteQTgzccAIoQRIkZ/view?usp=drive_link, https://drive.google.com/file/d/1ICXzUWbyMN9jgrgM6iQxbPGZM5Z_5CoX/view?usp=drive_link, https://drive.google.com/file/d/1gKTgBXNe0_cBRceGPlcszr4_gAZtbdzM/view?usp=drive_link, https://drive.google.com/file/d/1s8QqbEouP4FPPbkl4EOACi24_kQdUT6E/view?usp=drive_link, https://drive.google.com/file/d/1UEFZB1ETf0lJwFBHVVPByrLFn8CVTplY/view?usp=drive_link, https://drive.google.com/file/d/12P7qG5gqXiBg9PpopYO0pnXxV-C6OglJ/view?usp=drive_link, https://drive.google.com/file/d/1PqXzIGH-doPz4QvVaAfh1foQsIgAb2Zb/view?usp=drive_link, https://drive.google.com/file/d/13P11f2OJT5ZW5yeuvqm0iX43lpKFTvDz/view?usp=drive_link, https://drive.google.com/file/d/1kBt1mCCGW5SjQ7N16mI8S1WiDaumvtVA/view?usp=drive_link, https://drive.google.com/file/d/1kInN57lRWMGyeBlVm-JP4mCoUwOmy62t/view?usp=drive_link, https://drive.google.com/file/d/1QkFYgMKI9OcZz1loyxCTvQ4hGDypGFAu/view?usp=drive_link, https://drive.google.com/file/d/13iIBLHLTZ9vlSeIEh8UJ2zDKas9KNtK7/view?usp=drive_link, https://drive.google.com/file/d/1GGOI_brhtBvC_00--16qEzagE-tH7_MS/view?usp=drive_link, https://drive.google.com/file/d/11jy7wwiae70lRFLk5p3swoPwq2-G_7xU/view?usp=drive_link, https://drive.google.com/file/d/1zG-iaeOZHgdzGLcfwT4MO_vEeeklT6oz/view?usp=drive_link, https://drive.google.com/file/d/1yXYpjHqeZH7MQtorfyHlkzArZ0zkRvCd/view?usp=drive_link, https://drive.google.com/file/d/1VsHD4XnM9S8EjdovbEKxByOlKjoeZ9OG/view?usp=drive_link, https://drive.google.com/file/d/1JhxHF0lP8iXFRQpmvLqIiPvAJoDJXBb9/view?usp=drive_link, https://drive.google.com/file/d/1WSlsj5PJBJnvz-0c9N7rgjoY3EY0GTQJ/view?usp=drive_link, https://drive.google.com/file/d/1ZNBgSZo-oc0-eo93xjdK0AS141vQ9KD4/view?usp=drive_link, https://drive.google.com/file/d/1hEZaWdUeof7cIkAiTuxohvTVYU-Xv7tO/view?usp=drive_link, https://drive.google.com/file/d/1twArS6xkIyd8DxGFOXWr1F3hHW2k-V8A/view?usp=drive_link, https://drive.google.com/file/d/1slMu4AldYlhiHpjRg6MVeLx_huYiTXre/view?usp=drive_link, https://drive.google.com/file/d/1jjiwvewL2jO7eGLu1Ue_IMCgPcw9GO7f/view?usp=drive_link, https://drive.google.com/file/d/1dgBaPWl4SdPxwatRePKj4gniT_kQ1qj8/view?usp=drive_link, https://drive.google.com/file/d/1XsbtPkcg5UArvdTTK2ZD-kRiWHCWVbd4/view?usp=drive_link, https://drive.google.com/file/d/1lv4m6AIGTi5nPXGitWshZqofgBQ09XIZ/view?usp=drive_link, https://drive.google.com/file/d/1kT50Cxos5li0xa2Mab-ZyI6_0p0GzcoK/view?usp=drive_link, https://drive.google.com/file/d/1Q0ScwRAO30YWA_W_KR-zoDL9gUjqF-Nx/view?usp=drive_link, https://drive.google.com/file/d/1-RdPnEmvSSp9QxAfAaJaIOKeUrG2mALA/view?usp=drive_link, https://drive.google.com/file/d/13OgoSjSAnLZ7jZzIIskdGrXTyHVQywVT/view?usp=drive_link, https://drive.google.com/file/d/1Ne17kFuOTLKArcHNL_-xumJkxPdTJp7b/view?usp=drive_link, https://drive.google.com/file/d/1uVdRdkxFLfHawJjnicxyUYvLv_5nFnw0/view?usp=drive_link, https://drive.google.com/file/d/1SEHiqotzjjTPQ6kzT8wEQQn9YbObaZzM/view?usp=drive_link, https://drive.google.com/file/d/1It81XvjQB4QVAl6KnQRkSOaDGzUyTdKi/view?usp=drive_link, https://drive.google.com/file/d/1Mu1m-oOoA5mI8aEL_UbhztcqlBOD-K3g/view?usp=drive_link, https://drive.google.com/file/d/19C22vpyJQIPmEYRGQgfi6zL3qCHbYRbe/view?usp=drive_link, https://drive.google.com/file/d/1yEeFbpUZmXEAMRpZYpjWqRyibRAm3ffd/view?usp=drive_link, https://drive.google.com/file/d/1kf54SbJRQu-WOPvVwMt8k2aXychFwZx8/view?usp=drive_link, https://drive.google.com/file/d/1ea_nK55spGKVdKlzBTpt0JfTkaKtGdqt/view?usp=drive_link, https://drive.google.com/file/d/1JntXFuK_TEuYYrH8DYSeZnbs59li4UdK/view?usp=drive_link, https://drive.google.com/file/d/1oDNm2hHf88zH99kYGRQ27fI_08D8SW7i/view?usp=drive_link, https://drive.google.com/file/d/19B4xRZXQ5RxjDCNP_1INSUxf7LloP0Pd/view?usp=drive_link, https://drive.google.com/file/d/1gmmkqcqrA339k-prvaXaiXYZNNzXiDln/view?usp=drive_link, https://drive.google.com/file/d/1xGvsMzqTYw4kmpLEO41JfoAOdeMUJ9Zy/view?usp=drive_link, https://drive.google.com/file/d/1lBufqwfIowW_4XmvwUuuWe4P0qo4tKQ2/view?usp=drive_link, https://drive.google.com/file/d/1MB8IbBmOrA85FvOXx4lyoFG3QGyZ7zCO/view?usp=drive_link, https://drive.google.com/file/d/12sElVGi6yYefp6B9MES_lumL97Fg4zcX/view?usp=drive_link, https://drive.google.com/file/d/1jA42PrELeOjLVfdLZZRqu9VX-lOAiI0B/view?usp=drive_link, https://drive.google.com/file/d/1IdqDikhLAELnUgE8Bloe7rl78lDHPWMd/view?usp=drive_link, https://drive.google.com/file/d/1l12JuNzdKiNTxx9_uXoogLdtDt9SCmIB/view?usp=drive_link, https://drive.google.com/file/d/1kcaPM0Xpgk0Rcd7nYjX44NCyLmkttxps/view?usp=drive_link, https://drive.google.com/file/d/1AFcMazRa4_fvmnmrz1ybqPZpBHOs2ON1/view?usp=drive_link, https://drive.google.com/file/d/1MbEKvXI_0_RFF9URRWsWPRkh5Q2-YARa/view?usp=drive_link, https://drive.google.com/file/d/1YZ1DmVYC3hmObuSjfcgtvuyG0TGveXq3/view?usp=drive_link, https://drive.google.com/file/d/1RDYflXMeBFUVn0LYlQ6ceQ1BYVlQXxeG/view?usp=drive_link, https://drive.google.com/file/d/1HO-mMmskFh_xifhu6b2gAjn_Bzzmrx_9/view?usp=drive_link, https://drive.google.com/file/d/1QXwZNwrv1qpwVygUAG1Vv3PAfW0CMAOK/view?usp=drive_link, https://drive.google.com/file/d/1wDETrvr6XKIZcHqs0nosj6nqcLLV2kus/view?usp=drive_link, https://drive.google.com/file/d/1KVJcz7yJIJpjd5PAYvBYll3Wgzk_s6Xf/view?usp=drive_link, https://drive.google.com/file/d/1Qkw7lC3L1gXbkOyRlr15OYisbMVt1xUY/view?usp=drive_link, https://drive.google.com/file/d/1SAcQtNbDv847G9EyA8xjYXKcwgrHI_Fi/view?usp=drive_link, https://drive.google.com/file/d/1WxjtKRhWUnQlu56FU93HunRLW8E1iRQ2/view?usp=drive_link, https://drive.google.com/file/d/1vIXyfQZHhakceN8vwZp3t33QEC5AUC8u/view?usp=drive_link, https://drive.google.com/file/d/19a3cOWkPib9FQHW2tbDBSN6khn3z8LfA/view?usp=drive_link, https://drive.google.com/file/d/1F0MLWqSXqydVk4U2hHcyYNC1_Gj5lYZG/view?usp=drive_link, https://drive.google.com/file/d/1XfiPGPpb1JJchmrHx0VYxduXIFnkNOT9/view?usp=drive_link, https://drive.google.com/file/d/184DLjy9REnhEFFxirAcPcUsvoRwdfYFb/view?usp=drive_link, https://drive.google.com/file/d/1gktjNsRz32u99eku6jnXWCH4gfLLyYyt/view?usp=drive_link, https://drive.google.com/file/d/1v0rNct5skMPXcL0rnO6SOBqVSCSzXWOJ/view?usp=drive_link, https://drive.google.com/file/d/1PpflVGirzDoydfrWd6mJWhnNh8fNABnR/view?usp=drive_link, https://drive.google.com/file/d/1_iHppBx7faklYqMlpNffWTOMBQ4qWoza/view?usp=drive_link, https://drive.google.com/file/d/13nRpT6UZAoICM8ibjVUFDzVCHLGHD9Te/view?usp=drive_link, https://drive.google.com/file/d/1Jzrqz4InS5x0nKOAab3JNZjoDsppYzfc/view?usp=drive_link, https://drive.google.com/file/d/1fxV-rMGWYZ2Vi1e6pLkUcvOlHideI8xf/view?usp=drive_link, https://drive.google.com/file/d/1gy-lXYguf78BctLzu3veBPj0QxpYH5Po/view?usp=drive_link, https://drive.google.com/file/d/1xXUg7OepZe3zsO_uI-WO5VrCIGZmSw8W/view?usp=drive_link, https://drive.google.com/file/d/1oW2e5tEo3Hp7jzrHfWKeHgWiIsvteyLt/view?usp=drive_link, https://drive.google.com/file/d/1a-tEzKFZwq2xSwSAb-ZbYJeS3XVravxV/view?usp=drive_link, https://drive.google.com/file/d/13j5rMci5Yi3OZVRMUGrBKyBgvxR9IWYK/view?usp=drive_link, https://drive.google.com/file/d/15-mCykpAeWVu20E48kIbJDYIS96t9F21/view?usp=drive_link, https://drive.google.com/file/d/17rjo8B8cPuKM2jBUaP8g993nKwoUAE-c/view?usp=drive_link, https://drive.google.com/file/d/1XbHJA3f7n4xp97ppeaRUgnOv6XOdrClo/view?usp=drive_link, https://drive.google.com/file/d/1c_DVtqKvKrAuivWSIzFcfEjEYw7GdrsY/view?usp=drive_link, https://drive.google.com/file/d/1dTVGXQMkeIldxAffbtGOjelCrLu8jfiT/view?usp=drive_link, https://drive.google.com/file/d/1BRLMuyCBZlyj-6A4MwmpeytJwGCafk3R/view?usp=drive_link, https://drive.google.com/file/d/12aRBeF8v5LI7Ll_-Q7-t2mLhNnprUSwX/view?usp=drive_link, https://drive.google.com/file/d/1fZtX1BXPQ8z-eWT3PIBu9LMQDwTvA4lb/view?usp=drive_link, https://drive.google.com/file/d/11Tox3UfnRh6y__UlR-qZHWcgF4ZN3b-u/view?usp=drive_link, https://drive.google.com/file/d/13eLYbuoY11g6r5L4dSHbAQEuOL_yAbeD/view?usp=drive_link, https://drive.google.com/file/d/1IpKIMoJ-b0IweOjHPRn09Ap1rKCO8GQc/view?usp=drive_link, https://drive.google.com/file/d/1TRIPAzpxBK_cn6QDBxsSxuBW95Ngr9mo/view?usp=drive_link, https://drive.google.com/file/d/1icaCqIzTRwT6Xxg2WcB-NhHphcJgki11/view?usp=drive_link, https://drive.google.com/file/d/1j5f_o9IfF8Bvqpt6BOM1G93EACMwaxva/view?usp=drive_link, https://drive.google.com/file/d/1uP_hM4NBdNfQa8asP_opqX-f6iU9qODs/view?usp=drive_link, https://drive.google.com/file/d/1HJRRXn3ULDIl4pWkIug2-Zps2XyYhVsN/view?usp=drive_link, https://drive.google.com/file/d/10FyX5OXeZVCu4EYKbXODNPUdSJBA3T1U/view?usp=drive_link, https://drive.google.com/file/d/1CKvpkf-L6gcSn2Mxwb8wuha2s6QT46Ib/view?usp=drive_link, https://drive.google.com/file/d/1JMjJdSBS34kpde7mtNYqqibSkZ1EnlHT/view?usp=drive_link, https://drive.google.com/file/d/1Ov-44pBcWjnIRH7ExF2hh-xNO1UV_shM/view?usp=drive_link, https://drive.google.com/file/d/1pr4G2RID4FY4GeKpQHQnnN3WRngh8yNF/view?usp=drive_link, https://drive.google.com/file/d/1MRYZEYo5fkB5kuzHDYSY8Byb2A-RxDY_/view?usp=drive_link, https://drive.google.com/file/d/1-1EvWq45x3UYYjkE9Mcj1RNQQG8YsaK8/view?usp=drive_link, https://drive.google.com/file/d/1nLzr_lkuueMDbp4fiZd_67jJGPoNy0Pt/view?usp=drive_link, https://drive.google.com/file/d/1YnL1YbXzRDY-hr3y1SJc7dzlWEOy6dpr/view?usp=drive_link, https://drive.google.com/file/d/1B7DdMgdI_3ZRyLOkP6UiyJzBWuHfMNKL/view?usp=drive_link, https://drive.google.com/file/d/1jOcle8aklAE_07__byKnJHpylUaeHnTK/view?usp=drive_link, https://drive.google.com/file/d/1x0eYLb2dU0hsRZO9tzQYOPmwgXhD3tB6/view?usp=drive_link, https://drive.google.com/file/d/1v_Az84L0vqiRDkxZjWvhDaU27SA7TBZM/view?usp=drive_link, https://drive.google.com/file/d/1QOIfZ0PDzR6koiNPCk55dbTE8cP_0iwL/view?usp=drive_link, https://drive.google.com/file/d/147BbtJCCTIBtSuftOuh9hfRHK0S_y9gO/view?usp=drive_link, https://drive.google.com/file/d/105AfOx-iwwpDX9yGGhsVjbDfIY9ArPZN/view?usp=drive_link, https://drive.google.com/file/d/1aFBAdv6oqApEWr0EBnk5wGtqht451NAG/view?usp=drive_link, https://drive.google.com/file/d/1BzmGGnwmFoVA_BYg9G7bdxtI2sGsSEeO/view?usp=drive_link, https://drive.google.com/file/d/1UohsoCgy3fre1N6WYGVSLXeUtAEzB8Mk/view?usp=drive_link, https://drive.google.com/file/d/1ibaH4bwwj6jAIpzZvEH2RQ4pOQOR-Bem/view?usp=drive_link, https://drive.google.com/file/d/1wzWFMFQkF5Y0ohISw4hK4aERVRazEk_D/view?usp=drive_link, https://drive.google.com/file/d/1StEaFjyE9HT_jnEaLRpQAwUl9SW4bWc6/view?usp=drive_link, https://drive.google.com/file/d/1keS-RIHD6VEHHBL4mlmWNNg5BL1Gw08n/view?usp=drive_link, https://drive.google.com/file/d/1zqmBQyPX05GCLq_g43qwGEbLfcmzYu4U/view?usp=drive_link, https://drive.google.com/file/d/1iKOeWUHhHVA1NqE9TfGxvF7H0DOCtpQL/view?usp=drive_link, https://drive.google.com/file/d/1o-fgBp7pK7LJ45cMyPodHzpboPWu2NNd/view?usp=drive_link, https://drive.google.com/file/d/1CerQyFC47DxruDquqApoRDyayepXXaN6/view?usp=drive_link, https://drive.google.com/file/d/1fExgFt13Yf63y_8kzQmZGsP8ytNALegW/view?usp=drive_link, https://drive.google.com/file/d/1IKiAeYX2jkWO6NOl3f5yIaal-VS0H5S0/view?usp=drive_link, https://drive.google.com/file/d/1raBso-YMBVppH8m2vLNENZB3_7ZZN_mu/view?usp=drive_link, https://drive.google.com/file/d/1n34ffEJVVNjyhrA83ltlVbs-bTQ8YAUL/view?usp=drive_link, https://drive.google.com/file/d/1eDVun-pNJga4MPuvp38HYQ-a3nMKl0I1/view?usp=drive_link, https://drive.google.com/file/d/1Hzi_BWy0d4bt-eUq1TuU7by-eBgDqjzX/view?usp=drive_link, https://drive.google.com/file/d/18lVG4Min3Yir3_JtBHFPD5KqpuYVOjhT/view?usp=drive_link, https://drive.google.com/file/d/1ZkM4MKDIBl19mS5I4SPYhZKetggeaHsr/view?usp=drive_link, https://drive.google.com/file/d/11bME1Y0Tc9Mz3RbT2DFu_wOBGWH1skKs/view?usp=drive_link, https://drive.google.com/file/d/1yqLEg36cgmto66ZWijnmVQg9_-WcaPpA/view?usp=drive_link, https://drive.google.com/file/d/13V-WgCDD30o2i3s4DaIYR2Imax4AyfkD/view?usp=drive_link, https://drive.google.com/file/d/1a8E58TaJ8RZtgbR8VxrCDHk3Co2VZctv/view?usp=drive_link, https://drive.google.com/file/d/15kuXxbPQ1ahOfakGOsZvZOzJs7XRkAy2/view?usp=drive_link, https://drive.google.com/file/d/1pTmHWWfDYX6UVimQgpbCrd7Lbz6Zd68j/view?usp=drive_link, https://drive.google.com/file/d/15Dfd6q-fiebhZCwMX2gbDBp8aRyHZ7T_/view?usp=drive_link, https://drive.google.com/file/d/1Io0-6mpWoA6pH10mFeU7JwG-jynWFd8A/view?usp=drive_link, https://drive.google.com/file/d/12rDh0BAbXKYe_cFT8UeG3L9xG3hSfVFY/view?usp=drive_link, https://drive.google.com/file/d/1HT2Y2mVPvMIG-OJ3Kadl-4YeBmpoHCka/view?usp=drive_link, https://drive.google.com/file/d/1Edvyl7WMnNV5sHoNXsEsQH7g7fvFxFdp/view?usp=drive_link, https://drive.google.com/file/d/1jApMdOnqjMRWgaHlnRU8Zdumixds5bpn/view?usp=drive_link, https://drive.google.com/file/d/1hMSyq3c_sausbCaHARSz0uLYelX0Ew49/view?usp=drive_link, https://drive.google.com/file/d/1mPp08Mp-fLwclzyZ3H1ydSZLXlc_63oY/view?usp=drive_link, https://drive.google.com/file/d/1GVSrZ5dmvygJ7jvHhexunhb7AgmKY3WD/view?usp=drive_link, https://drive.google.com/file/d/1yVRRtecSDJzsXKg2sELqN0Ovt0K8weKR/view?usp=drive_link, https://drive.google.com/file/d/10u1uRVwkQgBo8ezKJ6epKXvWQr8-0GES/view?usp=drive_link, https://drive.google.com/file/d/1FRyZCi0ttxKzu9s2KfX3J1mWFTNqu0eM/view?usp=drive_link, https://drive.google.com/file/d/12ToW8MS9KkoVNIxjsvsivXnoMekixNZ2/view?usp=drive_link, https://drive.google.com/file/d/1mg7xfAx-pHCeCgt5vOuXjq2XjqD-3ng-/view?usp=drive_link, https://drive.google.com/file/d/1HtoeLmwYEwXchfeBEkCX3rF2FUGb6_f2/view?usp=drive_link, https://drive.google.com/file/d/1yZ-PmuSMi_PnMokPVoynY7BlaaEpjKs-/view?usp=drive_link, https://drive.google.com/file/d/1ViO-q-ogU1oe2q5ntK7SR-nHogp--Rvb/view?usp=drive_link, https://drive.google.com/file/d/10SSanwod3LhA4-YrS50dA_c5-IX7BlEl/view?usp=drive_link, https://drive.google.com/file/d/1Iae4yJOBjlzVEF2XuS9Ju7TG5zFuuQcF/view?usp=drive_link, https://drive.google.com/file/d/1-g_hbdvQA9yNAfDmNV0f4wH11bxywe3M/view?usp=drive_link, https://drive.google.com/file/d/1aOow6m4Ne3fd7Yc3XZuPYUHSzbIDXt_W/view?usp=drive_link, https://drive.google.com/file/d/17wwcLb0H8dEq1pTGUi23aQR4XkCVbp61/view?usp=drive_link, https://drive.google.com/file/d/1LdXajqQJsIVoxtg50GarOCl8t9zyLHIZ/view?usp=drive_link, https://drive.google.com/file/d/1w0h8Y6jntBeUatiJzUOXIjxehi12kecT/view?usp=drive_link, https://drive.google.com/file/d/1fhvPeWTTE9eFiaiWa5aUXCTf6fRdVHkj/view?usp=drive_link, https://drive.google.com/file/d/1EwFZjb5yfjLUXQsEpfOgQ6x2Si_SyBk7/view?usp=drive_link, https://drive.google.com/file/d/1q4flN3otVHVrECMS2t9_Y4xVj4VFcrbW/view?usp=drive_link, https://drive.google.com/file/d/1dbnLJf4-8ztaxjepXno0bOSaXjI1F2Yl/view?usp=drive_link, https://drive.google.com/file/d/1jS2eQo8EMu_7kWUeDqbuDjBfpxIakp-5/view?usp=drive_link, https://drive.google.com/file/d/1vB0LrC6lZq8bseQehLVXdcM53_WPQZAP/view?usp=drive_link, https://drive.google.com/file/d/1Of1k8Q2fF6e1kj-Pel-MJRoowQ9XshJF/view?usp=drive_link, https://drive.google.com/file/d/1JaWiRY5OUP06GQRP1UkYeCm6SgsqIpCK/view?usp=drive_link, https://drive.google.com/file/d/1DBBhR6jGuq-ZMHh4TPJqx2vaumg5iDds/view?usp=drive_link, https://drive.google.com/file/d/11NpgHf3d0__Fb9xSEYwHtxgrOoLUrdWV/view?usp=drive_link, https://drive.google.com/file/d/1Axv6ceI4YPTUycfmDAhE5N71GuVg96Yy/view?usp=drive_link, https://drive.google.com/file/d/1Sc1aT3D7RpF1CIqStaUwmiMO8Wup5YLx/view?usp=drive_link, https://drive.google.com/file/d/1bE5B-DyTeg9vbZbqkeI46urH-9FDgKSJ/view?usp=drive_link, https://drive.google.com/file/d/1fCHuDn_MN_Ky_a4CgNoVC5uldm7eceM0/view?usp=drive_link, https://drive.google.com/file/d/1ssoplMci_BO3WRe4zHZe_aZOIwkkHsg_/view?usp=drive_link, https://drive.google.com/file/d/11Jn3vwc8oV3m7WA75vWKFVna_V9VsapA/view?usp=drive_link, https://drive.google.com/file/d/1d6iInmKMPOnQReaLHKsl6eZXhmrBKfP3/view?usp=drive_link, https://drive.google.com/file/d/1sT9gnCpqTzGKgB2axfCZ3fOfSBzHgwPL/view?usp=drive_link, https://drive.google.com/file/d/1WM5VojIJYdevQaeYCqHvzH4DZC49Wlml/view?usp=drive_link, https://drive.google.com/file/d/1kr54n0JpireLY659_HpGveZhGeLqX5M8/view?usp=drive_link, https://drive.google.com/file/d/168KKr5MmM3FJfMXUWhvD3CzupJ5KHIv-/view?usp=drive_link, https://drive.google.com/file/d/14Zmpp7aeHl-mfryXLu0XZy33JWh5EVfk/view?usp=drive_link, https://drive.google.com/file/d/11Qgqcxt63D20ZnHs2h_ZWB1eRoHYweeM/view?usp=drive_link, https://drive.google.com/file/d/18c-JJlMMKKF-tM36ii_-WChzqHvPYHtw/view?usp=drive_link, https://drive.google.com/file/d/1LnqjFkHFE35hJq0bHKtmay34-Vpq0CjX/view?usp=drive_link, https://drive.google.com/file/d/1V6odt1LzmK6xsW5NjAMv_vqoltdf4vcF/view?usp=drive_link, https://drive.google.com/file/d/1l8eCLEXQ7yItu2rSHMc9m_dZvsZwm2U8/view?usp=drive_link, https://drive.google.com/file/d/12kqvG6o3Bsts1-O0jJeLA39I5JfAEJsG/view?usp=drive_link, https://drive.google.com/file/d/1Uv27C0Tf3EELMT6EeKs6pIz8TOtbU-al/view?usp=drive_link, https://drive.google.com/file/d/1ycf4mMpB1c8zaHeLP3k6t4fVtVYmkOTe/view?usp=drive_link, https://drive.google.com/file/d/1xY1FCpjF4xeMJvHDxOvfo35zu35pdSTx/view?usp=drive_link, https://drive.google.com/file/d/1i7a1ft_Npfx-LV3yl8lFOWOllW8c2pbf/view?usp=drive_link, https://drive.google.com/file/d/1YOtRrCusruVBI1Bv4EPZcQhDQ-PWZ829/view?usp=drive_link, https://drive.google.com/file/d/1UV9qy4o6lCIFyyK_F4s0vZFiaV3mmoVM/view?usp=drive_link, https://drive.google.com/file/d/1uU4PcxghF1ztlIuPZcRxrsehY9u2Q1a8/view?usp=drive_link, https://drive.google.com/file/d/1DQLT_EEMaW8_7PGLg7zMk-M9GxqK6cq2/view?usp=drive_link, https://drive.google.com/file/d/1x_D37i9YUs4UbJsEAS03hnR9VBFwXTKG/view?usp=drive_link, https://drive.google.com/file/d/1hxGVX0w6cp0FwkFk81hKZtp-9UirgAre/view?usp=drive_link, https://drive.google.com/file/d/1OrCI-AoG0qLH0i9MMNHVZJs0Gj_iwl7l/view?usp=drive_link, https://drive.google.com/file/d/1Ty0-XW_f55uiFBbiH5jqcE-4gah-1jxV/view?usp=drive_link, https://drive.google.com/file/d/1Bq-ZZIkknKQHkciwoR_itMMz7AcLothk/view?usp=drive_link, https://drive.google.com/file/d/1uMcGnp9mfkWVMHM_mWt2mVy8rG8BlR90/view?usp=drive_link, https://drive.google.com/file/d/1182McpIyWvebWKeTupSK0CEsEjcH2HdR/view?usp=drive_link, https://drive.google.com/file/d/1F55bjO6eGHJo_2dLebWSiAweb4q8UQXG/view?usp=drive_link, https://drive.google.com/file/d/1gkCfGU20_jBdHY-Mn65udauyAiQ_UlqE/view?usp=drive_link, https://drive.google.com/file/d/1wpQKYGwlx1VKLSvGYqHe6bHo1_10umN4/view?usp=drive_link, https://drive.google.com/file/d/13XlxD68WrjjBLg2Jes8YLmmTr1ih3aT2/view?usp=drive_link, https://drive.google.com/file/d/1ADRl0ZwXtUigVuJybsvq7N-a9n_UmB0y/view?usp=drive_link, https://drive.google.com/file/d/1PMGZCHRIQRBSut2RRG32aXrjUvBgg1uC/view?usp=drive_link, https://drive.google.com/file/d/1zvUskJFi7QMRmurI5y0Bw2YNdiXl0FV-/view?usp=drive_link, https://drive.google.com/file/d/1nmbOMfSvb_WMLQqdVC4xeLksFCtRw150/view?usp=drive_link, https://drive.google.com/file/d/1L-5eVzY8cJBrbwHDt0APhaO4tARmX8Dw/view?usp=drive_link, https://drive.google.com/file/d/1PyaZdjhY5yYewG81u3-41xJ4aTMhQvuW/view?usp=drive_link, https://drive.google.com/file/d/18PhWaD9zUrUWhJsiAqvcZ4hzl1Vo9mrf/view?usp=drive_link, https://drive.google.com/file/d/1qI_gBKierBxZEh_fF00usrzhbS1AfDb7/view?usp=drive_link, https://drive.google.com/file/d/15oYS3RDWQy81y8oO2lQEvB_2oraIB7nk/view?usp=drive_link, https://drive.google.com/file/d/1MgZo9cSxMqKicpZvlClbZfMuPhHWj3gI/view?usp=drive_link, https://drive.google.com/file/d/1m493BYsJftGITvx-KzE6JR_Hlir6_zvk/view?usp=drive_link, https://drive.google.com/file/d/1LzRSwcl-1cMMB4HQw9gigh5qxaTCdHGS/view?usp=drive_link, https://drive.google.com/file/d/1mGS7Di8YhA9H7D0NcRcR6-ZW6Cv1YdNI/view?usp=drive_link, https://drive.google.com/file/d/19QOPEYM698s2dHFs7f7wa66_yFMIZt0Z/view?usp=drive_link, https://drive.google.com/file/d/1Cz4qc5RVzFXry7hgCSlVkljBbZK6kxRZ/view?usp=drive_link, https://drive.google.com/file/d/1DU9YFf1-xqEuuHlCJl1duIBBNM_tq1LG/view?usp=drive_link
+
+    `;
+
+    // (İsteğe Bağlı): Şarkılara elle özel isim vermek isterseniz:
+    const CUSTOM_SONGS_METADATA = [
+        { driveId: "1rfGWxU8WlZQP1xFtloxS6ah07aGP5inT", name: "Toz Pembe", artist: "Manifest" },
+        { driveId: "1CEas5RLfRi5lggA4uqAP5KfSXzVU1ilu", name: "The Sound of Silence", artist: "Disturbed" },
+        { driveId: "12hfjZzq07S5pPenrzxJLuWDNO5qOazZ5", name: "Sound Of Silence", artist: "Simon & Garfunkel" }
+    ];
+
+    function parseDriveLinks() {
+        const driveRegex = /\/d\/([a-zA-Z0-9_-]+)|id=([a-zA-Z0-9_-]+)/g;
+        const songs = [];
+        let match;
+        let count = 1;
+
+        while ((match = driveRegex.exec(RAW_GOOGLE_DRIVE_LINKS)) !== null) {
+            const driveId = match[1] || match[2];
+            if (driveId && !songs.some(s => s.driveId === driveId)) {
+                const custom = CUSTOM_SONGS_METADATA.find(c => c.driveId === driveId);
+                songs.push({
+                    id: count,
+                    name: custom ? custom.name : `Drive Parça ${count}`,
+                    artist: custom ? (custom.artist || 'Google Drive') : 'Google Drive',
+                    category: custom ? (custom.artist || 'Müzik') : 'Müzik',
+                    driveId: driveId,
+                    isFetched: !!custom
+                });
+                count++;
+            }
+        }
+        return songs;
+    }
+
+    let STATIONS = parseDriveLinks();
+
+    let state = {
+        filteredStations: [...STATIONS],
+        currentStation: null,
+        currentIndex: -1,
+        playbackState: 'idle',
+        volume: 0.8,
+        favorites: JSON.parse(localStorage.getItem('zen_music_favs') || '[]'),
+        downloaded: new Set()
+    };
+
+    const audio = document.getElementById('audio-engine');
+    const stationGrid = document.getElementById('station-grid');
+    const playerBar = document.getElementById('player-bar');
+    const playerTitle = document.getElementById('player-title');
+    const playerSubtitle = document.getElementById('player-subtitle');
+    const playerCoverArt = document.getElementById('player-cover-art');
+    const btnPlayPause = document.getElementById('btn-play-pause');
+    const playIcon = document.getElementById('play-icon');
+    const pauseIcon = document.getElementById('pause-icon');
+    const btnFav = document.getElementById('btn-fav');
+    const btnDownload = document.getElementById('btn-download');
+    const volumeSlider = document.getElementById('volume-slider');
+    const seekSlider = document.getElementById('seek-slider');
+    const fullSeekSlider = document.getElementById('full-seek-slider');
+
+    const fullPlayer = document.getElementById('full-player');
+    const fullCoverArt = document.getElementById('full-cover-art');
+    const fullBlurBg = document.getElementById('full-player-blur-bg');
+    const fullPlayerTitle = document.getElementById('full-player-title');
+    const fullPlayerCat = document.getElementById('full-player-cat');
+    const fullPlayIcon = document.getElementById('full-play-icon');
+    const fullPauseIcon = document.getElementById('full-pause-icon');
+    const fullDetailsFav = document.getElementById('full-details-fav');
+    const fullBtnDownload = document.getElementById('full-btn-download');
+    const fullVolumeSlider = document.getElementById('full-volume-slider');
+    const timeCurrent = document.getElementById('time-current');
+    const timeTotal = document.getElementById('time-total');
+    const fullTimeCurrent = document.getElementById('full-time-current');
+    const fullTimeTotal = document.getElementById('full-time-total');
+
+    let sleepTimerId = null;
+    let sleepTimerSecondsRemaining = 0;
+    let visualizerIntervalId = null;
+
+    const COLOR_PALETTES = ['#282828', '#1e293b', '#1f2937', '#111827'];
+
+    function getGradientByName(name) {
+        let hash = 0;
+        for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+        return COLOR_PALETTES[Math.abs(hash) % COLOR_PALETTES.length];
+    }
+
+    function updateCounts() {
+        const totalCount = STATIONS.length;
+        const favCount = STATIONS.filter(s => state.favorites.includes(s.name)).length;
+        const filteredCount = state.filteredStations.length;
+
+        const pillAll = document.getElementById('pill-all');
+        const pillFav = document.getElementById('pill-fav');
+        const searchBadge = document.getElementById('search-count-badge');
+        const menuDiscover = document.getElementById('menu-text-discover');
+        const menuFav = document.getElementById('menu-text-favorites');
+        const tabDiscover = document.getElementById('tab-text-discover');
+        const tabFav = document.getElementById('tab-text-favorites');
+
+        if (pillAll) pillAll.innerText = `Tüm Şarkılar (${totalCount})`;
+        if (pillFav) pillFav.innerText = `❤️ Favorilerim (${favCount})`;
+        if (menuDiscover) menuDiscover.innerText = `Tüm Müzikler (${totalCount})`;
+        if (menuFav) menuFav.innerText = `Favorilerim (${favCount})`;
+        if (tabDiscover) tabDiscover.innerText = `Müzikler (${totalCount})`;
+        if (tabFav) tabFav.innerText = `Favoriler (${favCount})`;
+
+        const query = document.getElementById('search-input')?.value.trim();
+        if (query) {
+            if (searchBadge) searchBadge.innerText = `(${filteredCount} şarkı bulundu)`;
+        } else {
+            if (searchBadge) searchBadge.innerText = `(${filteredCount} şarkı)`;
+        }
+    }
+
+    async function autoFetchSongTitles() {
+        for (let song of STATIONS) {
+            if (!song.isFetched) {
+                try {
+                    const res = await fetch(`/api/info/${song.driveId}`);
+                    if (res.ok) {
+                        const info = await res.json();
+                        if (info.name && info.name !== 'Google Drive Müzik') {
+                            song.name = info.name;
+                            song.artist = info.artist && info.artist !== 'Bilinmeyen Sanatçı' ? info.artist : '';
+                            song.category = song.artist || 'Müzik';
+                            song.isFetched = true;
+                            renderStations();
+                            if (state.currentStation && state.currentStation.driveId === song.driveId) {
+                                updatePlayerUI();
+                            }
+                        }
+                    }
+                } catch (e) {
+                    console.log('Başlık çekilemedi:', song.driveId);
+                }
+            }
+        }
+    }
+
+    function renderStations() {
+        stationGrid.innerHTML = '';
+        updateCounts();
+
+        if (state.filteredStations.length === 0) {
+            stationGrid.innerHTML = `<div style="text-align:center; padding:60px 20px; color:var(--text-muted);">Müzik bulunamadı.</div>`;
+            return;
+        }
+
+        state.filteredStations.forEach((station, idx) => {
+            const isPlaying = state.currentStation && state.currentStation.driveId === station.driveId;
+            const isFav = state.favorites.includes(station.name);
+            const isDownloaded = state.downloaded.has(station.driveId);
+            const gradient = getGradientByName(station.name);
+
+            const card = document.createElement('div');
+            card.className = `station-card ${isPlaying ? 'playing-now' : ''}`;
+            card.onclick = () => playStation(station, idx);
+
+            card.innerHTML = `
+                <div class="card-image" style="background: ${gradient}">
+                    <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                </div>
+                <div class="station-info">
+                    <span class="station-name">${station.name}</span>
+                    <span class="station-cat">${station.artist || ''}</span>
+                </div>
+                <div class="card-actions">
+                    <button class="download-btn ${isDownloaded ? 'is-downloaded' : ''}" onclick="downloadSong(event, '${station.driveId}')" title="${isDownloaded ? 'İndirildi' : 'Şarkıyı İndir'}">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
+                    <button class="favorite-btn ${isFav ? 'is-fav' : ''}" onclick="toggleFavorite(event, '${station.name}')">
+                        <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </button>
+                </div>
+            `;
+            stationGrid.appendChild(card);
+        });
+    }
+
+    function playStation(station, idx) {
+        state.currentStation = station;
+        state.currentIndex = idx;
+        state.playbackState = 'connecting';
+        updatePlayerUI();
+
+        audio.src = `/stream/${station.driveId}`;
+        audio.play().then(() => {
+            state.playbackState = 'playing';
+            updatePlayerUI();
+        }).catch(err => {
+            console.log('Oynatma hatası:', err);
+            showToast('⚠️ Müzik yüklenemedi');
+        });
+    }
+
+    function togglePlay() {
+        if (!state.currentStation) {
+            if (state.filteredStations.length > 0) playStation(state.filteredStations[0], 0);
+            return;
+        }
+
+        if (audio.paused) {
+            audio.play();
+            state.playbackState = 'playing';
+        } else {
+            audio.pause();
+            state.playbackState = 'paused';
+        }
+        updatePlayerUI();
+    }
+
+    function playNextPrev(direction) {
+        if (state.filteredStations.length === 0) return;
+        let nextIdx = state.currentIndex + direction;
+        if (nextIdx >= state.filteredStations.length) nextIdx = 0;
+        if (nextIdx < 0) nextIdx = state.filteredStations.length - 1;
+        playStation(state.filteredStations[nextIdx], nextIdx);
+    }
+
+    audio.onended = () => {
+        playNextPrev(1);
+    };
+
+    audio.ontimeupdate = () => {
+        if (!audio.duration) return;
+        const current = audio.currentTime;
+        const total = audio.duration;
+        const pct = (current / total) * 100;
+
+        timeCurrent.textContent = formatTime(current);
+        timeTotal.textContent = formatTime(total);
+        if (fullTimeCurrent) fullTimeCurrent.textContent = formatTime(current);
+        if (fullTimeTotal) fullTimeTotal.textContent = formatTime(total);
+
+        seekSlider.value = pct;
+        if (fullSeekSlider) fullSeekSlider.value = pct;
+    };
+
+    function seekAudioInput(val) {
+        if (!audio.duration) return;
+        audio.currentTime = (parseFloat(val) / 100) * audio.duration;
+    }
+
+    function formatTime(secs) {
+        const m = Math.floor(secs / 60);
+        const s = Math.floor(secs % 60);
+        return `${m}:${s < 10 ? '0' : ''}${s}`;
+    }
+
+    function updatePlayerUI() {
+        const station = state.currentStation;
+        if (!station) return;
+
+        btnPlayPause.classList.remove('disabled');
+
+        playerTitle.innerText = station.name;
+        fullPlayerTitle.innerText = station.name;
+        fullPlayerCat.innerText = station.artist || '';
+
+        const gradient = getGradientByName(station.name);
+        playerCoverArt.style.background = gradient;
+        fullCoverArt.innerText = station.name;
+        fullCoverArt.style.background = gradient;
+        fullBlurBg.style.backgroundImage = gradient;
+
+        const isFav = state.favorites.includes(station.name);
+        if (isFav) {
+            btnFav.classList.add('is-fav');
+            fullDetailsFav.classList.add('is-fav');
+        } else {
+            btnFav.classList.remove('is-fav');
+            fullDetailsFav.classList.remove('is-fav');
+        }
+
+        const isDownloaded = state.downloaded.has(station.driveId);
+        if (isDownloaded) {
+            btnDownload.classList.add('is-downloaded');
+            if (fullBtnDownload) fullBtnDownload.classList.add('is-downloaded');
+        } else {
+            btnDownload.classList.remove('is-downloaded');
+            if (fullBtnDownload) fullBtnDownload.classList.remove('is-downloaded');
+        }
+
+        if (state.playbackState === 'playing') {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'block';
+            fullPlayIcon.style.display = 'none';
+            fullPauseIcon.style.display = 'block';
+            playerSubtitle.innerText = station.artist ? station.artist : 'Çalıyor...';
+            playerBar.classList.add('is-playing-state');
+            startVisualizerAnimation();
+        } else {
+            playIcon.style.display = 'block';
+            pauseIcon.style.display = 'none';
+            fullPlayIcon.style.display = 'block';
+            fullPauseIcon.style.display = 'none';
+            playerSubtitle.innerText = 'Duraklatıldı';
+            playerBar.classList.remove('is-playing-state');
+            stopVisualizerAnimation();
+        }
+
+        renderStations();
+    }
+
+    function downloadSong(e, driveId) {
+        if (e) e.stopPropagation();
+        state.downloaded.add(driveId);
+        showToast('📥 Şarkı indiriliyor...');
+        renderStations();
+        updatePlayerUI();
+
+        const a = document.createElement('a');
+        a.href = `/download/${driveId}`;
+        a.download = '';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    function downloadCurrentSong() {
+        if (!state.currentStation) return;
+        downloadSong(null, state.currentStation.driveId);
+    }
+
+    async function downloadAllSongs() {
+        if (state.filteredStations.length === 0) return;
+        showToast(`📥 ${state.filteredStations.length} şarkı indirilmeye başlatıldı...`);
+
+        for (let i = 0; i < state.filteredStations.length; i++) {
+            const station = state.filteredStations[i];
+            state.downloaded.add(station.driveId);
+            renderStations();
+
+            const a = document.createElement('a');
+            a.href = `/download/${station.driveId}`;
+            a.download = '';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            await new Promise(r => setTimeout(r, 600));
+        }
+        updatePlayerUI();
+    }
+
+    function startVisualizerAnimation() {
+        if (visualizerIntervalId) clearInterval(visualizerIntervalId);
+        const smallBars = document.querySelectorAll('.player-equalizer-icon span');
+        const largeBars = document.querySelectorAll('.full-equalizer span');
+
+        visualizerIntervalId = setInterval(() => {
+            if (state.playbackState === 'playing') {
+                smallBars.forEach(bar => bar.style.height = `${Math.floor(Math.random() * 18) + 4}px`);
+                largeBars.forEach(bar => bar.style.height = `${Math.floor(Math.random() * 32) + 6}px`);
+            }
+        }, 90);
+    }
+
+    function stopVisualizerAnimation() {
+        if (visualizerIntervalId) clearInterval(visualizerIntervalId);
+        const smallBars = document.querySelectorAll('.player-equalizer-icon span');
+        const largeBars = document.querySelectorAll('.full-equalizer span');
+        smallBars.forEach(bar => bar.style.height = '4px');
+        largeBars.forEach(bar => bar.style.height = '8px');
+    }
+
+    function toggleFavorite(e, name) {
+        if (e) e.stopPropagation();
+        const idx = state.favorites.indexOf(name);
+        if (idx > -1) {
+            state.favorites.splice(idx, 1);
+            showToast('Favorilerden çıkarıldı');
+        } else {
+            state.favorites.push(name);
+            showToast('❤️ Favorilere eklendi');
+        }
+        localStorage.setItem('zen_music_favs', JSON.stringify(state.favorites));
+        updatePlayerUI();
+    }
+
+    function toggleFavoriteCurrent() {
+        if (!state.currentStation) return;
+        toggleFavorite(null, state.currentStation.name);
+    }
+
+    function toggleTimerMenu(e) {
+        e.stopPropagation();
+        const menu = document.getElementById('timer-menu');
+        menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    }
+
+    function setSleepTimer(mins) {
+        document.getElementById('timer-menu').style.display = 'none';
+        if (sleepTimerId) clearInterval(sleepTimerId);
+
+        const badge = document.getElementById('timer-countdown');
+        const fullBadge = document.getElementById('full-timer-countdown');
+
+        if (mins === 0) {
+            if (badge) badge.style.display = 'none';
+            if (fullBadge) fullBadge.style.display = 'none';
+            showToast('⏱️ Zamanlayıcı kapatıldı');
+            return;
+        }
+
+        sleepTimerSecondsRemaining = mins * 60;
+        showToast(`⏱️ ${mins} dakika sonra müzik duracak`);
+        updateTimerDisplay();
+
+        sleepTimerId = setInterval(() => {
+            sleepTimerSecondsRemaining--;
+            if (sleepTimerSecondsRemaining <= 0) {
+                clearInterval(sleepTimerId);
+                audio.pause();
+                state.playbackState = 'paused';
+                updatePlayerUI();
+                if (badge) badge.style.display = 'none';
+                if (fullBadge) fullBadge.style.display = 'none';
+                showToast('⏱️ Uyku zamanlayıcısı süresi doldu');
+            } else {
+                updateTimerDisplay();
+            }
+        }, 1000);
+    }
+
+    function updateTimerDisplay() {
+        const m = Math.floor(sleepTimerSecondsRemaining / 60);
+        const s = sleepTimerSecondsRemaining % 60;
+        const text = `${m}:${s < 10 ? '0' : ''}${s}`;
+
+        const badge = document.getElementById('timer-countdown');
+        const fullBadge = document.getElementById('full-timer-countdown');
+
+        if (badge) { badge.innerText = text; badge.style.display = 'inline'; }
+        if (fullBadge) { fullBadge.innerText = text; fullBadge.style.display = 'inline'; }
+    }
+
+    function setVolume(val) {
+        state.volume = parseFloat(val);
+        audio.volume = state.volume;
+        if (volumeSlider) volumeSlider.value = val;
+        if (fullVolumeSlider) fullVolumeSlider.value = val;
+    }
+
+    function toggleScreenSaver(e) {
+        if (e) e.stopPropagation();
+        document.body.classList.toggle('screensaver-active');
+    }
+
+    function openFullPlayer() {
+        if (!state.currentStation) return;
+        fullPlayer.classList.add('active');
+    }
+
+    function closeFullPlayer() {
+        fullPlayer.classList.remove('active');
+    }
+
+    function showToast(msg) {
+        const toast = document.getElementById('toast-container');
+        document.getElementById('toast-message').innerText = msg;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    function handleSearch(val) {
+        const q = val.toLowerCase();
+        state.filteredStations = STATIONS.filter(s => s.name.toLowerCase().includes(q) || s.artist.toLowerCase().includes(q));
+        renderStations();
+    }
+
+    function filterCategory(cat, el) {
+        if (el) {
+            document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+        }
+
+        if (cat === 'all') {
+            state.filteredStations = [...STATIONS];
+        } else if (cat === 'favorites') {
+            state.filteredStations = STATIONS.filter(s => state.favorites.includes(s.name));
+        }
+        renderStations();
+    }
+
+    function switchTab(tab) {
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        document.querySelectorAll('.tab-item').forEach(i => i.classList.remove('active'));
+
+        if (tab === 'discover') {
+            document.getElementById('menu-discover')?.classList.add('active');
+            document.getElementById('tab-discover')?.classList.add('active');
+            filterCategory('all');
+        } else if (tab === 'favorites') {
+            document.getElementById('menu-favorites')?.classList.add('active');
+            document.getElementById('tab-favorites')?.classList.add('active');
+            filterCategory('favorites');
+        }
+    }
+
+    // MOBİL DOKUNMATİK SWIPE GESTURES
+    function setupSwipeGestures() {
+        const miniPlayer = document.getElementById('player-bar');
+        const fullPlayer = document.getElementById('full-player');
+
+        let touchStartX = 0, touchStartY = 0;
+        let touchEndX = 0, touchEndY = 0;
+        const minSwipe = 40;
+
+        function getDir() {
+            const dx = touchEndX - touchStartX;
+            const dy = touchEndY - touchStartY;
+            if (Math.abs(dx) > Math.abs(dy)) {
+                if (Math.abs(dx) > minSwipe) return dx > 0 ? 'right' : 'left';
+            } else {
+                if (Math.abs(dy) > minSwipe) return dy > 0 ? 'down' : 'up';
+            }
+            return null;
+        }
+
+        miniPlayer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        miniPlayer.addEventListener('touchend', e => {
+            touchEndY = e.changedTouches[0].screenY;
+            if (touchEndY - touchStartY < -minSwipe) openFullPlayer();
+        }, { passive: true });
+
+        fullPlayer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        fullPlayer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
+            const dir = getDir();
+            if (dir === 'down') closeFullPlayer();
+            else if (dir === 'left') playNextPrev(1);
+            else if (dir === 'right') playNextPrev(-1);
+        }, { passive: true });
+    }
+
+    // MASAÜSTÜ DRAGGABLE PLAYER MODALI
+    function setupDesktopDraggablePlayer() {
+        const player = document.getElementById('full-player');
+        if (!player) return;
+
+        let isDragging = false;
+        let startX = 0, startY = 0;
+        let initialLeft = 0, initialTop = 0;
+
+        player.addEventListener('pointerdown', (e) => {
+            if (window.innerWidth <= 768) return;
+            const interactive = e.target.closest('button') || e.target.closest('input') || e.target.closest('a');
+            if (interactive) return;
+
+            isDragging = true;
+            try { player.setPointerCapture(e.pointerId); } catch(err) {}
+
+            const rect = player.getBoundingClientRect();
+            startX = e.clientX; startY = e.clientY;
+            initialLeft = rect.left; initialTop = rect.top;
+
+            player.style.right = 'auto'; player.style.bottom = 'auto';
+            player.style.left = initialLeft + 'px'; player.style.top = initialTop + 'px';
+            player.style.transform = 'none'; player.style.cursor = 'grabbing';
+        });
+
+        player.addEventListener('pointermove', (e) => {
+            if (!isDragging) return;
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+
+            let newLeft = Math.max(0, Math.min(window.innerWidth - player.offsetWidth, initialLeft + dx));
+            let newTop = Math.max(0, Math.min(window.innerHeight - player.offsetHeight, initialTop + dy));
+
+            player.style.left = newLeft + 'px';
+            player.style.top = newTop + 'px';
+        });
+
+        const endDrag = (e) => {
+            if (isDragging) {
+                isDragging = false;
+                player.style.cursor = 'grab';
+                try { player.releasePointerCapture(e.pointerId); } catch(err) {}
+            }
+        };
+
+        player.addEventListener('pointerup', endDrag);
+        player.addEventListener('pointercancel', endDrag);
+    }
+
+    setInterval(() => {
+        const timeEl = document.getElementById('widget-time');
+        if (timeEl) {
+            const now = new Date();
+            timeEl.innerText = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+        }
+    }, 1000);
+
+    renderStations();
+    autoFetchSongTitles();
+    setupSwipeGestures();
+    setupDesktopDraggablePlayer();
+</script>
+</body>
+</html>
